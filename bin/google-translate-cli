@@ -1,0 +1,82 @@
+#!/bin/sh
+:;#-*-Emacs-Lisp-*-
+
+:;test -n "$EMACS" || EMACS=emacs
+:;test -n "$CASK_EMACS" && EMACS=$CASK_EMACS
+:;exec "$EMACS" -batch -Q -l "$0" -- "$@"
+
+;;; google-translate-cli --- A command-line interface for Google Translate  -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2026  Shen, Jen-Chieh
+
+;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
+;; Maintainer: Shen, Jen-Chieh <jcs090218@gmail.com>
+;; URL: https://github.com/jcs090218/google-translate-cli
+;; Version: 0.0.1
+;; Package-Requires: ((emacs "24.3"))
+;; Keywords:
+
+;; This file is not part of GNU Emacs.
+
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+;;; Commentary:
+;;
+;; The command-line interface.
+;;
+
+;;; Code:
+
+(require 'google-translate-cli)
+(require 'commander)
+(require 'pp)
+
+(defun google-translate-cli--translate (&rest args)
+  "Translate the text and output to standard output."
+  (google-translate-cli
+   google-translate-cli--source-language
+   google-translate-cli--target-language
+   (mapconcat #'identity args " ")))
+
+(defun google-translate-cli--list ()
+  "List of supported languages."
+  (pp google-translate-supported-languages-alist))
+
+(defun google-translate-cli--set-target-language (arg)
+  "Set the target language."
+  (setq google-translate-cli--target-language arg))
+
+(defun google-translate-cli--set-source-language (arg)
+  "Set the source language."
+  (setq google-translate-cli--source-language arg))
+
+(commander
+ (name "google-translate-cli")
+ (description "A command-line interface for Google Translate")
+ (default commander-print-usage-and-exit)
+ (option "--help, -h" "Show usage information and exit" commander-print-usage-and-exit)
+
+ (command "translate [*]"
+          "Translate the text and output to standard output."
+          google-translate-cli--translate)
+ (command "list"
+          "List of supported languages."
+          google-translate-cli--list)
+
+ (option "--target-language <target-language>, -t <target-language>"
+         google-translate-cli--set-target-language)
+ (option "--source-language <source-language>, -s <source-language>"
+         google-translate-cli--set-source-language))
+
+;;; google-translate-cli ends here
