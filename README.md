@@ -6,24 +6,6 @@
 
 [![CI](https://github.com/emacs-eine/google-translate-cli/actions/workflows/test.yml/badge.svg)](https://github.com/emacs-eine/google-translate-cli/actions/workflows/test.yml)
 
-## 💾 Installation
-
-You need to add this line to your Eask file (global recommanded).
-
-```elisp
-(source 'gnu)
-(source 'melpa)
-(source 'jcs-elpa)
-```
-
-Then, install it:
-
-```console
-eask install -g google-translate-cli
-```
-
-## 🔧 Usage
-
 Here is the basic usage of this tool:
 
 ```console
@@ -42,6 +24,24 @@ OPTIONS:
  --target-language <target-language>, -t <target-language>          Set the target language.
  --source-language <source-language>, -s <source-language>          Set the source language.
 ```
+
+## 💾 Installation
+
+You need to add this line to your Eask file (global recommanded).
+
+```elisp
+(source 'gnu)
+(source 'melpa)
+(source 'jcs-elpa)
+```
+
+Then, install it:
+
+```console
+eask install -g google-translate-cli
+```
+
+## 🔧 Usage
 
 To translate text:
 
