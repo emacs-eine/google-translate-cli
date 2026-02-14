@@ -4,6 +4,8 @@
 # google-translate-cli
 > A command-line interface for Google Translate
 
+[![CI](https://github.com/emacs-eine/google-translate-cli/actions/workflows/test.yml/badge.svg)](https://github.com/emacs-eine/google-translate-cli/actions/workflows/test.yml)
+
 ## 💾 Installation
 
 You need to add this line to your Eask file (global recommanded).
