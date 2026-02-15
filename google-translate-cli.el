@@ -4,7 +4,7 @@
 
 ;; Author: Jen-Chieh Shen <jcs090218@gmail.com>
 ;; Maintainer: Jen-Chieh Shen <jcs090218@gmail.com>
-;; URL: https://github.com/jcs090218/google-translate-cli
+;; URL: https://github.com/emacs-eine/google-translate-cli
 ;; Version: 1.0.0
 ;; Package-Requires: ((emacs "26.1")
 ;;                    (google-translate "0.12.0")

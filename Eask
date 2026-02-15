@@ -4,7 +4,7 @@
          "1.0.0"
          "A command-line interface for Google Translate")
 
-(website-url "https://github.com/jcs090218/google-translate-cli")
+(website-url "https://github.com/emacs-eine/google-translate-cli")
 (keywords "convenience")
 
 (package-file "google-translate-cli.el")
