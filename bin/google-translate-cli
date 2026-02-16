@@ -2,7 +2,7 @@
 :;#-*-Emacs-Lisp-*-
 
 :;test -n "$EMACS" || EMACS=emacs
-:;test -n "$CASK_EMACS" && EMACS=$CASK_EMACS
+:;test -n "$EASK_EMACS" && EMACS=$EASK_EMACS
 :;exec "$EMACS" -batch -Q -l "$0" -- "$@"
 
 ;;; google-translate-cli --- A command-line interface for Google Translate  -*- lexical-binding: t; -*-
