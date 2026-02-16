@@ -55,6 +55,15 @@ The output:
 你好世界！
 ```
 
+### Configuration
+
+You can configure translation behaviour from the Eask file.
+
+```elisp
+(setq google-translate-cli-source-language "en"
+      google-translate-cli-target-language "auto")
+```
+
 ## 🛠️ Contribute
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
