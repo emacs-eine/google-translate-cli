@@ -37,14 +37,24 @@
 (require 'google-translate)
 (require 'msgu)
 
-(defvar google-translate-cli--text
-  nil)
+(defgroup google-translate-cli nil
+  "A command-line interface for Google Translate."
+  :prefix "google-translate-cli-"
+  :group 'tool
+  :link '(url-link :tag "Repository" "https://github.com/emacs-eine/google-translate-cli"))
 
-(defvar google-translate-cli--target-language
-  "en")
+(defcustom google-translate-cli-target-language "en"
+  "The default target language you wish to translate to."
+  :type 'string
+  :group 'google-translate-cli)
 
-(defvar google-translate-cli--source-language
-  "auto")
+(defvar google-translate-cli-source-language "auto"
+  "The default source language you wish to translate from."
+  :type 'string
+  :group 'google-translate-cli)
+
+;; internal use
+(defvar google-translate-cli--text nil)
 
 ;;;###autoload
 (defun google-translate-cli (source-language target-language text)
