@@ -11,10 +11,6 @@
 
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
 ;; Maintainer: Shen, Jen-Chieh <jcs090218@gmail.com>
-;; URL: https://github.com/jcs090218/google-translate-cli
-;; Version: 0.0.1
-;; Package-Requires: ((emacs "24.3"))
-;; Keywords:
 
 ;; This file is not part of GNU Emacs.
 
