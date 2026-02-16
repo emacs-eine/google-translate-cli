@@ -55,7 +55,7 @@ The output:
 你好世界！
 ```
 
-### Configuration
+### 🔍 Configuration
 
 You can configure translation behaviour from the Eask file.
 
