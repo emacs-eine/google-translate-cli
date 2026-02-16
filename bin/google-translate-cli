@@ -44,17 +44,17 @@
                         google-translate-cli-target-language
                         (mapconcat #'identity args " ")))
 
-(defun google-translate-cli--list ()
-  "List of supported languages."
-  (pp google-translate-supported-languages-alist))
+(defun google-translate-cli--set-source-language (arg)
+  "Set the source language."
+  (setq google-translate-cli-source-language arg))
 
 (defun google-translate-cli--set-target-language (arg)
   "Set the target language."
   (setq google-translate-cli-target-language arg))
 
-(defun google-translate-cli--set-source-language (arg)
-  "Set the source language."
-  (setq google-translate-cli-source-language arg))
+(defun google-translate-cli--list ()
+  "List of supported languages."
+  (pp google-translate-supported-languages-alist))
 
 (commander
  (name "google-translate-cli")
@@ -69,9 +69,9 @@
           "List of supported languages."
           google-translate-cli--list)
 
- (option "--target-language <target-language>, -t <target-language>"
-         google-translate-cli--set-target-language)
  (option "--source-language <source-language>, -s <source-language>"
-         google-translate-cli--set-source-language))
+         google-translate-cli--set-source-language)
+ (option "--target-language <target-language>, -t <target-language>"
+         google-translate-cli--set-target-language))
 
 ;;; google-translate-cli ends here
