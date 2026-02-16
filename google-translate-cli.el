@@ -43,13 +43,13 @@
   :group 'tool
   :link '(url-link :tag "Repository" "https://github.com/emacs-eine/google-translate-cli"))
 
-(defcustom google-translate-cli-target-language "en"
-  "The default target language you wish to translate to."
+(defvar google-translate-cli-source-language "auto"
+  "The default source language you wish to translate from."
   :type 'string
   :group 'google-translate-cli)
 
-(defvar google-translate-cli-source-language "auto"
-  "The default source language you wish to translate from."
+(defcustom google-translate-cli-target-language "en"
+  "The default target language you wish to translate to."
   :type 'string
   :group 'google-translate-cli)
 
