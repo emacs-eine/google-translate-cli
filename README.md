@@ -83,37 +83,16 @@ To run the test locally, you will need the following tools:
 - [Eask](https://emacs-eask.github.io/)
 - [Make](https://www.gnu.org/software/make/) (optional)
 
-Install all dependencies and development dependencies:
+Link this package as a global dependency:
 
 ```sh
-eask install-deps --dev
+eask -g link add google-translate-cli </path/to/project/dir/>
 ```
 
-To test the package's installation:
+Then execute the command:
 
 ```sh
-eask package
-eask install
-```
-
-To test compilation:
-
-```sh
-eask compile
-```
-
-**🪧 The following steps are optional, but we recommend you follow these lint results!**
-
-The built-in `checkdoc` linter:
-
-```sh
-eask lint checkdoc
-```
-
-The standard `package` linter:
-
-```sh
-eask lint package
+eask -g exec google-translate-cli --help
 ```
 
 *📝 P.S. For more information, find the Eask manual at https://emacs-eask.github.io/.*
