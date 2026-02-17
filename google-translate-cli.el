@@ -43,7 +43,7 @@
   :group 'tool
   :link '(url-link :tag "Repository" "https://github.com/emacs-eine/google-translate-cli"))
 
-(defvar google-translate-cli-source-language "auto"
+(defcustom google-translate-cli-source-language "auto"
   "The default source language you wish to translate from."
   :type 'string
   :group 'google-translate-cli)
@@ -59,12 +59,15 @@
 ;;;###autoload
 (defun google-translate-cli (source-language target-language text)
   "Translate text and output to standard output."
-  (let ((kill-ring kill-ring))
+  (let ((old-kill-ring kill-ring))
     (msgu-silent
       (google-translate-translate source-language
                                   target-language
                                   text
-                                  'kill-ring))
+                                  'kill-ring)
+      ;; Wait until the result came in.
+      (while (equal old-kill-ring kill-ring)
+        (sit-for 0.2)))
     (when-let* ((result (car kill-ring)))
       (princ result))))
 
