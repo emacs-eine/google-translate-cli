@@ -57,6 +57,9 @@ jobs:
       run:
         make ci
 
+    - name: Give permissions
+      run: chmod -R 777 ./bin/
+
     - name: Test commands
       run: |
         eask -g link add google-translate-cli .
