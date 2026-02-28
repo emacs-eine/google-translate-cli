@@ -60,4 +60,4 @@ jobs:
     - name: Test commands
       run: |
         eask -g link add google-translate-cli .
-        eask -g exec google-translate-cli translate Hello World!? -t ja
+        eask -g exec google-translate-cli Hello World!? -t ja
