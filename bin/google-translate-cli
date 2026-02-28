@@ -59,12 +59,9 @@
 (commander
  (name "google-translate-cli")
  (description "A command-line interface for Google Translate")
- (default commander-print-usage-and-exit)
+ (default google-translate-cli--translate)
  (option "--help, -h" "Show usage information and exit" commander-print-usage-and-exit)
 
- (command "translate [*]"
-          "Translate the text and output to standard output."
-          google-translate-cli--translate)
  (command "list"
           "List of supported languages."
           google-translate-cli--list)

@@ -59,6 +59,8 @@
 ;;;###autoload
 (defun google-translate-cli (source-language target-language text)
   "Translate text and output to standard output."
+  (when (string-empty-p text)
+    (error "The translation text cannot be empty string"))
   (let ((old-kill-ring kill-ring))
     (msgu-silent
       (google-translate-translate source-language

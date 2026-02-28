@@ -15,14 +15,13 @@ A command-line interface for Google Translate
 
 COMMANDS:
 
- translate [*]                                                      Translate the text and output to standard output.
  list                                                               List of supported languages.
 
 OPTIONS:
 
  --help, -h                                                         Show usage information and exit
- --target-language <target-language>, -t <target-language>          Set the target language.
  --source-language <source-language>, -s <source-language>          Set the source language.
+ --target-language <target-language>, -t <target-language>          Set the target language.
 ```
 
 ## 💾 Installation
@@ -47,7 +46,7 @@ eask install -g google-translate-cli
 To translate text:
 
 ```console
-eask -g exec google-translate-cli translate "hello world!" -t "zh-TW"
+eask -g exec google-translate-cli "hello world!" -t "zh-TW"
 ```
 
 The output:
